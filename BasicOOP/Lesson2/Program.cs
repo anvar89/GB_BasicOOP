@@ -6,7 +6,15 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BankAccount myAccount = new BankAccount()
+            {
+                Type = BankAccountTypes.Deposit,
+                Balance = 1000000,
+                Id = 123123123123
+            };
+
+            Console.WriteLine($"Номер счёта: {myAccount.Id} \nТип счёта: {Enum.GetName(typeof(BankAccountTypes),myAccount.Type)}\nБаланс: {myAccount.Balance}");
+            Console.ReadKey();
         }
     }
 }
