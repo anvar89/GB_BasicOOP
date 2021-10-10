@@ -9,11 +9,10 @@ namespace Lesson2
             BankAccount myAccount = new BankAccount()
             {
                 Type = BankAccountTypes.Deposit,
-                Balance = 1000000,
-                Id = 123123123123
+                Balance = 1000000
             };
 
-            Console.WriteLine($"Номер счёта: {myAccount.Id} \nТип счёта: {Enum.GetName(typeof(BankAccountTypes),myAccount.Type)}\nБаланс: {myAccount.Balance}");
+            Console.WriteLine(myAccount);
             Console.ReadKey();
         }
     }
