@@ -15,7 +15,7 @@ namespace Lesson2
         public BankAccountTypes Type
         {
             get => type;
-            set
+            private set
             {
                 type = value;
             }
@@ -24,7 +24,7 @@ namespace Lesson2
         public long Balance
         {
             get => balance;
-            set
+            private set
             {
                 balance = value;
             }
@@ -39,10 +39,25 @@ namespace Lesson2
             }
         }
 
-        public BankAccount()
+        public BankAccount() : this(BankAccountTypes.Deposit, 0)
         {
+        }
+
+        public BankAccount(BankAccountTypes type) : this(type, 0)
+        {
+        }
+
+        public BankAccount(long balance) : this(BankAccountTypes.Deposit, balance)
+        {
+        }
+
+        public BankAccount(BankAccountTypes type, long balance)
+        {
+            Type = type;
+            Balance = balance;
             Id = GenerateUniqueId();
         }
+
 
         private long GenerateUniqueId() => ++lastId;
             

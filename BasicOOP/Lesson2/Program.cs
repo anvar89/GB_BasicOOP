@@ -6,13 +6,13 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            BankAccount myAccount = new BankAccount()
-            {
-                Type = BankAccountTypes.Deposit,
-                Balance = 1000000
-            };
+            BankAccount myAccount = new BankAccount();
+            BankAccount myAccount2 = new BankAccount(100);
+
 
             Console.WriteLine(myAccount);
+            Console.WriteLine();
+            Console.WriteLine(myAccount2);
             Console.ReadKey();
         }
     }
