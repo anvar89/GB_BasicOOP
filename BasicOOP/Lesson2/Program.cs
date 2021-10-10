@@ -7,12 +7,20 @@ namespace Lesson2
         static void Main(string[] args)
         {
             BankAccount myAccount = new BankAccount();
-            BankAccount myAccount2 = new BankAccount(100);
-
 
             Console.WriteLine(myAccount);
-            Console.WriteLine();
-            Console.WriteLine(myAccount2);
+            Console.WriteLine("Снятие со счёта:");
+            Console.WriteLine(myAccount.Withdraw(100)? "Операция удалась" : "Недостаточно средств" );
+            Console.WriteLine(myAccount);
+            Console.WriteLine("Пополнение счёта:");
+
+            myAccount.Deposit(1000);
+
+            Console.WriteLine(myAccount);
+            Console.WriteLine("Снятие со счёта:");
+            Console.WriteLine(myAccount.Withdraw(100) ? "Операция удалась" : "Недостаточно средств");
+            Console.WriteLine(myAccount);
+
             Console.ReadKey();
         }
     }

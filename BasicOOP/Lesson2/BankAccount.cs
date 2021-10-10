@@ -58,9 +58,20 @@ namespace Lesson2
             Id = GenerateUniqueId();
         }
 
-
         private long GenerateUniqueId() => ++lastId;
             
+        public bool Withdraw(long amount)
+        {
+            if (balance < amount) return false;
+
+            balance -= amount;
+            return true;
+        }
+
+        public void Deposit(long amount)
+        {
+            balance += amount;
+        }
 
         public override string ToString()
         {
