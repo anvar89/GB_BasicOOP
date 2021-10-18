@@ -73,6 +73,17 @@ namespace Lesson2
             balance += amount;
         }
 
+        public bool TransferFrom(BankAccount sender, long amount)
+        {
+            if (sender.Withdraw(amount))
+            {
+                this.Deposit(amount);
+                return true;
+            }
+
+            return false;
+        }
+
         public override string ToString()
         {
             return $"Номер счёта: {this.Id} \n" +
